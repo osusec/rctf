@@ -35,7 +35,7 @@ mkdocs-material==5.5.12
     #   mkdocs-material-extensions
 mkdocs-material-extensions==1.0
     # via mkdocs-material
-nltk==3.5
+nltk==3.9
     # via lunr
 pygments==2.7.4
     # via mkdocs-material
@@ -43,7 +43,7 @@ pymdown-extensions==7.1
     # via mkdocs-material
 pyyaml==5.4
     # via mkdocs
-regex==2020.6.8
+regex==2024.11.6
     # via nltk
 six==1.15.0
     # via
