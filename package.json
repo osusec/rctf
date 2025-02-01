@@ -47,7 +47,7 @@
     "fastify-helmet": "5.0.0",
     "fastify-static": "4.7.0",
     "got": "11.5.2",
-    "hyperid": "2.0.5",
+    "hyperid": "3.3.0",
     "jss-plugin-global": "10.4.0",
     "mailgun-js": "0.22.0",
     "mustache": "4.0.1",
