@@ -2606,7 +2606,7 @@ buffer@4.9.2, buffer@^4.3.0:
     ieee754 "^1.1.4"
     isarray "^1.0.0"
 
-buffer@^5.5.0:
+buffer@^5.2.1, buffer@^5.5.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.7.1.tgz#ba62e7c13133053582197160851a8f648e99eed0"
   dependencies:
@@ -6272,11 +6272,12 @@ husky@4.2.5:
     slash "^3.0.0"
     which-pm-runs "^1.0.0"
 
-hyperid@2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/hyperid/-/hyperid-2.0.5.tgz#fecedad4e9868d548c096482917c33090bccd2be"
+hyperid@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hyperid/-/hyperid-3.3.0.tgz#2042bb296b7f1d5ba0797a5705469af0899c8556"
   dependencies:
-    uuid "^3.4.0"
+    buffer "^5.2.1"
+    uuid "^8.3.2"
     uuid-parse "^1.1.0"
 
 hyphenate-style-name@^1.0.2:
@@ -12100,7 +12101,7 @@ uuid@8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.0.tgz#ab738085ca22dc9a8c92725e459b1d507df5d6ea"
 
-uuid@^3.3.2, uuid@^3.4.0:
+uuid@^3.3.2:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
 
