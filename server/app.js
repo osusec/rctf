@@ -3,7 +3,7 @@ import fastify from 'fastify'
 import fastifyStatic from 'fastify-static'
 import helmet from 'fastify-helmet'
 import hyperid from 'hyperid'
-import config from './config/server'
+import config from './config/server.js'
 import { serveIndex, getRealIp } from './util'
 import { init as uploadProviderInit } from './uploads'
 import api, { logSerializers as apiLogSerializers } from './api'
@@ -28,7 +28,7 @@ const app = fastify({
   genReqId: hyperid()
 })
 
-app.addHook('onRequest', async (req, reply) => {
+app.addHook('onRequest', async (req /*, reply */) => {
   Object.defineProperty(req, 'ip', {
     get () { return getRealIp(this) }
   })

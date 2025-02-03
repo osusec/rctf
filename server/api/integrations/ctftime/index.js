@@ -1,4 +1,7 @@
+import callback from './callback.js'
+import leaderboard from './leaderboard.js'
+
 export default [
-  require('./callback').default,
-  require('./leaderboard').default
+  callback,
+  leaderboard,
 ]

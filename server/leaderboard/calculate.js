@@ -1,7 +1,7 @@
 import { workerData, parentPort } from 'worker_threads'
-import { getScore } from '../util/scores'
-import { calcSamples } from './samples'
-import config from '../config/server'
+import { getScore } from '../util/scores.js'
+import { calcSamples } from './samples.js'
+import config from '../config/server.js'
 
 const {
   data: {
@@ -112,7 +112,7 @@ const userCompare = (a, b) => {
     return scoreCompare
   }
   if (a[4] !== undefined || b[4] !== undefined) {
-    return (a[4] ?? Infinity) - (b[4] ?? Infinity)
+    return (a[4] !== null ? a[4] : Infinity) - (b[4] !== null ? b[4] : Infinity)
   }
   return a[5] - b[5]
 }

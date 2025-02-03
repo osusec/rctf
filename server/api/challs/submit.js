@@ -1,9 +1,9 @@
 import crypto from 'crypto'
 import * as db from '../../database'
 import * as challenges from '../../challenges'
-import { responses } from '../../responses'
-import config from '../../config/server'
-import * as timeouts from '../../cache/timeouts'
+import { responses } from '../../responses.js'
+import config from '../../config/server.js'
+import * as timeouts from '../../cache/timeouts.js'
 import { v4 as uuidv4 } from 'uuid'
 
 export default {

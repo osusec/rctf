@@ -1,6 +1,6 @@
 import { promisify } from 'util'
-import client from './client'
-import config from '../config/server'
+import client from './client.js'
+import config from '../config/server.js'
 
 const redisEvalsha = promisify(client.evalsha.bind(client))
 const redisHget = promisify(client.hget.bind(client))

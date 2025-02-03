@@ -1,4 +1,4 @@
-import config, { ServerConfig } from '../config/server'
+import config, { ServerConfig } from '../config/server.js'
 
 type ACLCheck = (email: string | undefined) => boolean
 

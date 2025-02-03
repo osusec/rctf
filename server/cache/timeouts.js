@@ -1,5 +1,5 @@
 import { promisify } from 'util'
-import client from './client'
+import client from './client.js'
 
 const redisScript = promisify(client.script.bind(client))
 const redisEvalsha = promisify(client.evalsha.bind(client))

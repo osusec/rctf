@@ -1,8 +1,8 @@
-import db from './db'
-import * as util from '../util'
-import config, { ServerConfig } from '../config/server'
-import { DivisionACLError } from '../errors'
-import { ExtractQueryType } from './util'
+import db from './db.js'
+import * as util from '../util/index.js'
+import config, { ServerConfig } from '../config/server.js'
+import { DivisionACLError } from '../errors/index.js'
+import { ExtractQueryType } from './util.js'
 
 export interface User {
   id: string;

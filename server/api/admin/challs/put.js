@@ -1,6 +1,6 @@
-import { responses } from '../../../responses'
+import { responses } from '../../../responses.js'
 import * as challenges from '../../../challenges'
-import perms from '../../../util/perms'
+import perms from '../../../util/perms.js'
 import * as cache from '../../../cache'
 
 export default {

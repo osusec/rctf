@@ -1,5 +1,6 @@
-import db from './db'
-import { Challenge } from '../challenges/types'
+import db from './db.js'
+import { type QueryResult } from 'pg'
+import { Challenge } from '../challenges/types.js'
 
 export interface DatabaseChallenge {
   id: string;
@@ -7,8 +8,14 @@ export interface DatabaseChallenge {
 }
 
 export const getAllChallenges = (): Promise<DatabaseChallenge[]> => {
-  return db.query<DatabaseChallenge>('SELECT * FROM challenges')
-    .then(res => res.rows)
+  return db.query<DatabaseChallenge>(
+      'SELECT * FROM challenges'
+  ).then((res: QueryResult) => {
+     
+    const rows = res.rows;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return rows;
+  })
 }
 
 export const getChallengeById = ({ id }: Pick<DatabaseChallenge, 'id'>): Promise<DatabaseChallenge | undefined> => {

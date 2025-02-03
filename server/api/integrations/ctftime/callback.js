@@ -1,7 +1,7 @@
 import got from 'got'
-import { responses } from '../../../responses'
+import { responses } from '../../../responses.js'
 import * as auth from '../../../auth'
-import config from '../../../config/server'
+import config from '../../../config/server.js'
 
 const tokenEndpoint = 'https://oauth.ctftime.org/token'
 const userEndpoint = 'https://oauth.ctftime.org/user'

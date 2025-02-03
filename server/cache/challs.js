@@ -1,6 +1,6 @@
 import EventEmitter from 'events'
 import { promisify } from 'util'
-import client, { subClient } from './client'
+import client, { subClient } from './client.js'
 
 const redisSubscribe = promisify(subClient.subscribe.bind(subClient))
 const redisPublish = promisify(client.publish.bind(client))

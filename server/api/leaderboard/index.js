@@ -1,4 +1,6 @@
+import graph from './graph.js';
+import now from './now.js';
+
 export default [
-  require('./graph').default,
-  require('./now').default
-]
+  graph, now,
+];

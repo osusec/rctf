@@ -1,5 +1,5 @@
-import config from '../../../../config/server'
-import { responses } from '../../../../responses'
+import config from '../../../../config/server.js'
+import { responses } from '../../../../responses.js'
 import * as database from '../../../../database'
 
 export default {

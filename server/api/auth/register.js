@@ -3,9 +3,9 @@ import emailValidator from 'email-validator'
 import * as cache from '../../cache'
 import * as util from '../../util'
 import * as auth from '../../auth'
-import config from '../../config/server'
-import { responses } from '../../responses'
-import { getUserByNameOrEmail } from '../../database/users'
+import config from '../../config/server.js'
+import { responses } from '../../responses.js'
+import { getUserByNameOrEmail } from '../../database/users.js'
 import { sendVerification } from '../../email'
 
 const recaptchaEnabled = util.recaptcha.checkProtectedAction(util.recaptcha.RecaptchaProtectedActions.register)

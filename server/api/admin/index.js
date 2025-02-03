@@ -1,4 +1,7 @@
+import challsRoutes from './challs.js'
+import uploadRoutes from './upload.js'
+
 export default [
-  ...require('./challs').default,
-  ...require('./upload').default
+  ...challsRoutes,
+  ...uploadRoutes,
 ]

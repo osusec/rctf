@@ -1,14 +1,14 @@
-import config from '../config/server'
-import clientConfig from '../config/client'
+import config from '../config/server.js'
+import clientConfig from '../config/client.js'
 import { promises as fs } from 'fs'
 import mustache from 'mustache'
 import { FastifyPluginAsync, FastifyRequest, RouteHandlerMethod } from 'fastify'
 
-export * as normalize from './normalize'
-export * as validate from './validate'
-export * as scores from './scores'
-export * as restrict from './restrict'
-export * as recaptcha from './recaptcha'
+export * as normalize from './normalize.js'
+export * as validate from './validate.js'
+export * as scores from './scores.js'
+export * as restrict from './restrict.js'
+export * as recaptcha from './recaptcha.js'
 
 /**
  * Perform a deep-copy of a JSON-stringifiable object
@@ -34,10 +34,10 @@ export const serveIndex: FastifyPluginAsync<{ indexPath: string; }> = async (fas
   }
 
   fastify.get('/', routeHandler)
-  fastify.get('/index.html', async (req, reply) => reply.redirect(301, '/'))
-  fastify.get('//*', async (req, reply) => reply.redirect(302, '/'))
+  fastify.get('/index.html', async (req, reply) => reply.redirect('/', 301))
+  fastify.get('//*', async (req, reply) => reply.redirect('/', 302))
   // Fastify bug #2466
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+   
   fastify.setNotFoundHandler(routeHandler)
 }
 

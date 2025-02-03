@@ -1,8 +1,8 @@
 import path from 'path'
 import fs from 'fs'
 import mustache from 'mustache'
-import config from '../config/server'
-import { ProviderConstructor } from './provider'
+import config from '../config/server.js'
+import { ProviderConstructor } from './provider.js'
 
 export type VerificationEmailKind = 'register' | 'recover' | 'update'
 
@@ -10,6 +10,7 @@ let sendVerification: (data: {
   token: string,
   kind: VerificationEmailKind,
   email: string
+// eslint-disable-next-line
 }) => Promise<void> = async () => {
   throw new Error('email verification requested when email provider is not configured')
 }
@@ -25,7 +26,7 @@ if (emailConfig) {
   const verifyText = fs.readFileSync(path.join(__dirname, 'emails/verify.txt')).toString()
 
   // This function is already typed earlier in the file; no need to repeat the type definition
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+   
   sendVerification = async ({ token, kind, email }) => {
     const emailView = {
       ctf_name: config.ctfName,

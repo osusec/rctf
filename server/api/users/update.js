@@ -1,7 +1,7 @@
-import { responses } from '../../responses'
+import { responses } from '../../responses.js'
 import * as database from '../../database'
-import config from '../../config/server'
-import * as timeouts from '../../cache/timeouts'
+import config from '../../config/server.js'
+import * as timeouts from '../../cache/timeouts.js'
 import * as util from '../../util'
 import { DivisionACLError } from '../../errors'
 

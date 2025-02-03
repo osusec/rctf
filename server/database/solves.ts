@@ -1,7 +1,7 @@
-import db from './db'
-import { Challenge } from '../challenges/types'
-import { User } from './users'
-import { ExtractQueryType } from './util'
+import db from './db.js'
+import { Challenge } from '../challenges/types.js'
+import { User } from './users.js'
+import { ExtractQueryType } from './util.js'
 
 export interface Solve {
   id: string;

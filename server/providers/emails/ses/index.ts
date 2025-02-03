@@ -1,6 +1,6 @@
 import { promisify } from 'util'
 import AWS from 'aws-sdk'
-import { Provider, Mail } from '../../../email/provider'
+import { Provider, Mail } from '../../../email/provider.js'
 
 interface SesProviderOptions {
   awsKeyId: string;
@@ -63,7 +63,7 @@ export default class SesProvider implements Provider {
         Source: mail.from
       })
     } catch (e) {
-      throw new SesError(e)
+      throw new SesError(e as Error)
     }
   }
 }

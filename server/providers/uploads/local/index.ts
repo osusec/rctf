@@ -1,10 +1,11 @@
-import { Provider } from '../../../uploads/provider'
+import { Provider } from '../../../uploads/provider.js'
 import process from 'process'
 import path from 'path'
 import fs from 'fs'
 import crypto from 'crypto'
-import config from '../../../config/server'
+import config from '../../../config/server.js'
 import { FastifyInstance } from 'fastify'
+// @ts-expect-error: Missing type definitions, fastifyStatic is implicit-any
 import fastifyStatic from 'fastify-static'
 import contentDisposition from 'content-disposition'
 
@@ -40,14 +41,16 @@ export default class LocalProvider implements Provider {
 
     this.uploadMap = new Map<string, Upload>()
 
+    // eslint-disable-next-line @typescript-eslint/require-await
     void app.register(async (fastify) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       void fastify.register(fastifyStatic, {
         root: this.uploadDirectory,
         serve: false
       })
 
       // Fastify bug #2466
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+       
       fastify.setNotFoundHandler(async (req, res) => {
         void res.status(404)
         return 'Not found'
@@ -72,9 +75,11 @@ export default class LocalProvider implements Provider {
 
         const upload = this.uploadMap.get(key)
         if (upload != null) {
-          void reply.header('Cache-Control', 'public, max-age=31557600, immutable')
-          void reply.header('Content-Disposition', contentDisposition(upload.name))
-          void reply.sendFile(path.relative(this.uploadDirectory, upload.filePath))
+          const fileStream = fs.createReadStream(path.relative(this.uploadDirectory, upload.filePath));
+          await reply.header('Cache-Control', 'public, max-age=31557600, immutable');
+          await reply.header('Content-Disposition', contentDisposition(upload.name));
+          await reply.header('Content-Type', 'application/octet-stream');
+          void reply.send(fileStream);
         } else {
           reply.callNotFound()
         }
@@ -111,6 +116,7 @@ export default class LocalProvider implements Provider {
     return (config.origin || '') + urlPath
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async getUrl (sha256: string, name: string): Promise<string|null> {
     const key = this.getKey(sha256, name)
     if (!this.uploadMap.has(key)) return null

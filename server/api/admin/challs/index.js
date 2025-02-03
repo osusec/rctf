@@ -1,6 +1,11 @@
+import list from './list.js'
+import get from './get.js'
+import put from './put.js'
+import del from './delete.js'
+
 export default [
-  require('./list').default,
-  require('./get').default,
-  require('./put').default,
-  require('./delete').default
-]
+  list,
+  get,
+  put,
+  del,
+];

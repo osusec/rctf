@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { makeUser, User } from '../database/users'
-import { getToken, tokenKinds } from './token'
-import { responses } from '../responses'
+import { makeUser, User } from '../database/users.js'
+import { getToken, tokenKinds } from './token.js'
+import { responses } from '../responses.js'
 import { ValueOf } from 'type-fest'
 
 export const register = async (

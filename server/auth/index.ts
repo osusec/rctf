@@ -1,2 +1,2 @@
-export * as token from './token'
-export * as register from './register'
+export * as token from './token.js'
+export * as register from './register.js'

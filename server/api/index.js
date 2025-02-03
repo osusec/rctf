@@ -1,15 +1,23 @@
-import { responses, responseList } from '../responses'
+import { responses, responseList } from '../responses.js'
 import * as auth from '../auth'
 import * as db from '../database'
 
+import leaderboardRoutes from './leaderboard.js'
+import challsRoutes from './challs.js'
+import ctftimeIntegrationRoutes from './integrations/ctftime.js'
+import clientIntegrationRoutes from './integrations/client.js'
+import usersRoutes from './users.js'
+import authRoutes from './auth.js'
+import adminRoutes from './admin.js'
+
 const routes = [
-  ...require('./leaderboard').default,
-  ...require('./challs').default,
-  ...require('./integrations/ctftime').default,
-  ...require('./integrations/client').default,
-  ...require('./users').default,
-  ...require('./auth').default,
-  ...require('./admin').default
+  ...leaderboardRoutes,
+  ...challsRoutes,
+  ...ctftimeIntegrationRoutes,
+  ...clientIntegrationRoutes,
+  ...usersRoutes,
+  ...authRoutes,
+  ...adminRoutes,
 ]
 
 const makeSendResponse = (res) => (responseKind, data = null) => {
@@ -63,7 +71,7 @@ export default async (fastify) => {
     makeSendResponse(res)(responses.badEndpoint)
   })
 
-  routes.forEach((route, i) => {
+  routes.forEach((route) => {
     const handler = async (req, res) => {
       const sendResponse = makeSendResponse(res)
       let user

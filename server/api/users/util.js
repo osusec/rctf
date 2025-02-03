@@ -1,7 +1,7 @@
 import * as db from '../../database'
 import * as challenges from '../../challenges'
 import * as cache from '../../cache'
-import { getChallengeInfo } from '../../cache/leaderboard'
+import { getChallengeInfo } from '../../cache/leaderboard.js'
 
 export const getGenericUserData = async ({ id }) => {
   const user = await db.users.getUserById({ id })

@@ -1,5 +1,5 @@
-import clientConfig from '../../../config/client'
-import { responses } from '../../../responses'
+import clientConfig from '../../../config/client.js'
+import { responses } from '../../../responses.js'
 
 export default {
   method: 'GET',

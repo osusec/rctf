@@ -1,6 +1,6 @@
 import * as database from '../../../database'
-import { responses } from '../../../responses'
-import config from '../../../config/server'
+import { responses } from '../../../responses.js'
+import config from '../../../config/server.js'
 
 export default {
   method: 'GET',

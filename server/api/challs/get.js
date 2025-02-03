@@ -1,7 +1,7 @@
-import config from '../../config/server'
+import config from '../../config/server.js'
 import * as challenges from '../../challenges'
-import { responses } from '../../responses'
-import { getChallengeInfo } from '../../cache/leaderboard'
+import { responses } from '../../responses.js'
+import { getChallengeInfo } from '../../cache/leaderboard.js'
 
 export default {
   method: 'GET',

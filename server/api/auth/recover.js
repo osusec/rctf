@@ -4,8 +4,8 @@ import * as cache from '../../cache'
 import * as util from '../../util'
 import * as auth from '../../auth'
 import * as database from '../../database'
-import config from '../../config/server'
-import { responses } from '../../responses'
+import config from '../../config/server.js'
+import { responses } from '../../responses.js'
 import { sendVerification } from '../../email'
 
 const recaptchaEnabled = util.recaptcha.checkProtectedAction(util.recaptcha.RecaptchaProtectedActions.recover)

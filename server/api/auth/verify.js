@@ -1,7 +1,7 @@
 import * as auth from '../../auth'
 import * as cache from '../../cache'
 import * as database from '../../database'
-import { responses } from '../../responses'
+import { responses } from '../../responses.js'
 import { DivisionACLError } from '../../errors'
 
 export default {

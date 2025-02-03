@@ -1,5 +1,5 @@
-import { responses } from '../../responses'
-import { getGenericUserData } from './util'
+import { responses } from '../../responses.js'
+import { getGenericUserData } from './util.js'
 
 export default {
   method: 'GET',

@@ -1,6 +1,6 @@
 import * as database from '../../database'
 import * as auth from '../../auth'
-import { responses } from '../../responses'
+import { responses } from '../../responses.js'
 
 export default {
   method: 'POST',

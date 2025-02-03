@@ -1,5 +1,5 @@
-import { responses } from '../../../responses'
-import perms from '../../../util/perms'
+import { responses } from '../../../responses.js'
+import perms from '../../../util/perms.js'
 import { getUrl } from '../../../uploads'
 
 export default {

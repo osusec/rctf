@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer'
 import Mailer from 'nodemailer/lib/mailer'
-import { Provider, Mail } from '../../../email/provider'
+import { Provider, Mail } from '../../../email/provider.js'
 
 interface SmtpProviderOptions {
   smtpUrl: string;

@@ -1,5 +1,9 @@
+import get from './get.js'
+import solves from './solves.js'
+import submit from './submit.js'
+
 export default [
-  require('./get').default,
-  require('./solves').default,
-  require('./submit').default
+  get,
+  solves,
+  submit,
 ]

@@ -1,5 +1,5 @@
-import { responses } from '../../../responses'
-import perms from '../../../util/perms'
+import { responses } from '../../../responses.js'
+import perms from '../../../util/perms.js'
 import { upload } from '../../../uploads'
 import toBuffer from 'data-uri-to-buffer'
 
@@ -43,7 +43,8 @@ export default {
           data: toBuffer(data)
         }
       })
-    } catch (e) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_) {
       return responses.badDataUri
     }
 

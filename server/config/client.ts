@@ -1,4 +1,4 @@
-import server, { ServerConfig } from './server'
+import server, { ServerConfig } from './server.js'
 
 export type ClientConfig = Pick<ServerConfig,
   'meta' |

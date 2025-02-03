@@ -1,7 +1,7 @@
 import * as db from '../../database'
 import * as challenges from '../../challenges'
-import { responses } from '../../responses'
-import config from '../../config/server'
+import { responses } from '../../responses.js'
+import config from '../../config/server.js'
 
 export default {
   method: 'GET',

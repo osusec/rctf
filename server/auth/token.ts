@@ -1,8 +1,8 @@
 import { promisify } from 'util'
 import crypto from 'crypto'
-import config from '../config/server'
+import config from '../config/server.js'
 import { ValueOf } from 'type-fest'
-import { User } from '../database/users'
+import { User } from '../database/users.js'
 
 const randomBytes = promisify(crypto.randomBytes)
 const tokenKey = Buffer.from(config.tokenKey, 'base64')
@@ -87,6 +87,7 @@ const encryptToken = async <Kind extends tokenKinds>(content: InternalTokenData<
   return tokenContent.toString('base64')
 }
 
+// eslint-disable-next-line @typescript-eslint/require-await
 const decryptToken = async <Kind extends tokenKinds>(token: Token): Promise<InternalTokenData<Kind> | null> => {
   try {
     const tokenContent = Buffer.from(token, 'base64')
@@ -97,6 +98,7 @@ const decryptToken = async <Kind extends tokenKinds>(token: Token): Promise<Inte
     const plainText = cipher.update(tokenContent.slice(12, tokenContent.length - 16))
     cipher.final()
     return JSON.parse(plainText.toString()) as InternalTokenData<Kind>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
     return null
   }

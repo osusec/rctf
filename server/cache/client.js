@@ -1,5 +1,5 @@
 import redis from 'redis'
-import config from '../config/server'
+import config from '../config/server.js'
 
 const creds = config.database.redis
 

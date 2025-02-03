@@ -1,5 +1,5 @@
 import got from 'got'
-import config from '../config/server'
+import config from '../config/server.js'
 
 export enum RecaptchaProtectedActions {
   register = 'register',

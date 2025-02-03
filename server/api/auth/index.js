@@ -1,7 +1,13 @@
+import login from './login.js'
+import recover from './recover.js'
+import register from './register.js'
+import test from './test.js'
+import verify from './verify.js'
+
 export default [
-  require('./login').default,
-  require('./recover').default,
-  require('./register').default,
-  require('./test').default,
-  require('./verify').default
+  login,
+  recover,
+  register,
+  test,
+  verify,
 ]

@@ -1,5 +1,5 @@
-import { responses } from '../../responses'
-import { getUserData } from './util'
+import { responses } from '../../responses.js'
+import { getUserData } from './util.js'
 import * as util from '../../util'
 import * as auth from '../../auth'
 

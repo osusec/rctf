@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "BSD-3-Clause",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint": "sh -c \"tsc --noEmit ; eslint .\"",
     "lint:strict": "sh -c \"tsc --noEmit -p tsconfig.strict.json ; eslint .\"",
@@ -58,6 +59,7 @@
     "@types/content-disposition": "0.5.8",
     "@types/mailgun-js": "0.22.18",
     "@types/mustache": "4.2.5",
+    "@types/node": "22.13.0",
     "@types/nodemailer": "6.4.17",
     "@types/pg": "8.11.11",
     "@types/uuid": "10.0.0",
@@ -77,6 +79,7 @@
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-ava": "15.0.1",
     "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-n": "17.15.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "7.2.1",
     "eslint-plugin-standard": "5.0.0",
@@ -99,13 +102,15 @@
     "preact": "10.25.4",
     "preact-cli": "3.5.1",
     "preact-markup": "2.1.1",
+    "preact-render-to-string": "6.5.13",
     "preact-router": "4.1.2",
     "purgecss-webpack-plugin": "7.0.2",
     "snarkdown": "2.0.0",
     "supertest": "7.0.0",
     "svg-sprite-loader": "6.0.11",
     "type-fest": "4.33.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.22.0"
   },
   "description": "rctf is RedpwnCTF's CTF platform. It is developed and maintained by the [redpwn](https://redpwn.net) CTF team.",
   "repository": {

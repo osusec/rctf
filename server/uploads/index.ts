@@ -1,6 +1,6 @@
-import config from '../config/server'
+import config from '../config/server.js'
 import path from 'path'
-import { Provider, ProviderConstructor } from './provider'
+import { Provider, ProviderConstructor } from './provider.js'
 import { FastifyInstance } from 'fastify'
 
 let provider: Provider | null = null
@@ -9,7 +9,8 @@ export const init = (app: FastifyInstance | null): void => {
   const name = app === null ? 'uploads/dummy' : config.uploadProvider.name
 
   // FIXME: use async loading
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+   
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { default: ProviderClass } = require(path.join('../providers', name)) as { default: ProviderConstructor }
 
   provider = new ProviderClass(config.uploadProvider.options ?? {}, app)

@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid'
 import emailValidator from 'email-validator'
 import * as database from '../../../database'
-import { responses } from '../../../responses'
+import { responses } from '../../../responses.js'
 import * as util from '../../../util'
-import config from '../../../config/server'
+import config from '../../../config/server.js'
 
 export default {
   method: 'POST',

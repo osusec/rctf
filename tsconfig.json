@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "NodeNext",
     "target": "es2019",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "noImplicitAny": true,
     "strict": true,
     "allowJs": true,

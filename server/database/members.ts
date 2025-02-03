@@ -1,5 +1,5 @@
-import db from './db'
-import { User } from './users'
+import db from './db.js'
+import { User } from './users.js'
 
 export interface UserMember {
   id: string;

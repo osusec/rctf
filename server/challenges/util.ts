@@ -1,5 +1,5 @@
-import { Challenge } from './types'
-import { deepCopy } from '../util'
+import { Challenge } from './types.js'
+import { deepCopy } from '../util/index.js'
 
 const ChallengeDefaults: Challenge = {
   id: '',
@@ -17,8 +17,9 @@ const ChallengeDefaults: Challenge = {
 }
 
 export const applyChallengeDefaults = (chall: Challenge): Challenge => {
+   
   const copy = deepCopy(ChallengeDefaults)
-
+   
   return {
     ...copy,
     ...chall

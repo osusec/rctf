@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events'
-import { Challenge } from './types'
+import { Challenge } from './types.js'
 
 export interface Provider extends EventEmitter {
   forceUpdate (): void;

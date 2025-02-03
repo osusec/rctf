@@ -1,4 +1,4 @@
-import { responses } from '../../responses'
+import { responses } from '../../responses.js'
 
 export default {
   method: 'GET',

@@ -1,6 +1,6 @@
 import { promisify } from 'util'
-import config from '../config/server'
-import client from './client'
+import config from '../config/server.js'
+import client from './client.js'
 
 const redisSet = promisify(client.set.bind(client))
 const redisDel = promisify(client.del.bind(client))

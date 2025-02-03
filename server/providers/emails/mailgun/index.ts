@@ -1,5 +1,5 @@
 import mg from 'mailgun-js'
-import { Provider, Mail } from '../../../email/provider'
+import { Provider, Mail } from '../../../email/provider.js'
 
 interface MailgunProviderOptions {
   apiKey: string;

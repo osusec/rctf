@@ -1,11 +1,11 @@
-import { Challenge } from '../../../challenges/types'
-import { applyChallengeDefaults } from '../../../challenges/util'
-import { Provider } from '../../../challenges/Provider'
+import { Challenge } from '../../../challenges/types.js'
+import { applyChallengeDefaults } from '../../../challenges/util.js'
+import { Provider } from '../../../challenges/Provider.js'
 import { EventEmitter } from 'events'
 
-import * as db from '../../../database'
-import { DatabaseChallenge } from '../../../database/challenges'
-import { deepCopy } from '../../../util'
+import * as db from '../../../database/index.js'
+import { DatabaseChallenge } from '../../../database/challenges.js'
+import { deepCopy } from '../../../util/index.js'
 
 class DatabaseProvider extends EventEmitter implements Provider {
   private challenges: Challenge[] = []
@@ -17,7 +17,7 @@ class DatabaseProvider extends EventEmitter implements Provider {
 
   private async update (): Promise<void> {
     try {
-      const dbchallenges = await db.challenges.getAllChallenges()
+      const dbchallenges: DatabaseChallenge[] = await db.challenges.getAllChallenges()
 
       this.challenges = dbchallenges.map(({ id, data }) => {
         return {
@@ -38,14 +38,11 @@ class DatabaseProvider extends EventEmitter implements Provider {
   }
 
   challengeToRow (chall: Challenge): DatabaseChallenge {
-    chall = deepCopy(chall)
-
-    const id = chall.id
-    delete chall.id
+    const {id, ...data} = deepCopy(chall);
 
     return {
       id,
-      data: chall
+      data: data,
     }
   }
 

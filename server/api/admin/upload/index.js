@@ -1,4 +1,7 @@
+import post from './post.js'
+import query from './query.js'
+
 export default [
-  require('./post').default,
-  require('./query').default
+  post,
+  query,
 ]
