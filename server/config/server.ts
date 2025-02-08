@@ -103,7 +103,7 @@ const fileConfigLoaders: Map<string, (file: string) => PartialDeep<ServerConfig>
   ['yml', yamlLoader]
 ])
 
-const configPath = process.env.RCTF_CONF_PATH ?? path.join(__dirname, '../../../conf.d')
+const configPath = process.env.RCTF_CONF_PATH ?? path.join(import.meta.dirname, '../../../conf.d')
 const fileConfigs: PartialDeep<ServerConfig>[] = []
 fs.readdirSync(configPath).sort().forEach((name) => {
   const matched = /\.(.+)$/.exec(name)

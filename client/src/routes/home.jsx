@@ -1,6 +1,5 @@
 import { Component } from 'preact'
 import config from '../config'
-import 'linkstate/polyfill'
 import Markdown from '../components/markdown'
 import withStyles from '../components/jss'
 

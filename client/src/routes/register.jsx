@@ -1,7 +1,7 @@
 import { Fragment, Component } from 'preact'
 import Form from '../components/form'
 import config from '../config'
-import 'linkstate/polyfill'
+import '../../lib/linkstate.js'
 import withStyles from '../components/jss'
 
 import { register, login, setAuthToken } from '../api/auth'
@@ -86,7 +86,7 @@ export default withStyles({
             placeholder='Team Name'
             type='text'
             value={name}
-            onChange={this.linkState('name')}
+            onChange={linkState(this, 'name')}
           />
           <input
             required
@@ -97,7 +97,7 @@ export default withStyles({
             placeholder='Email'
             type='email'
             value={email}
-            onChange={this.linkState('email')}
+            onChange={linkState(this, 'email')}
           />
         </Form>
         {config.ctftime && (

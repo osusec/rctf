@@ -2,7 +2,7 @@ import { Fragment, Component } from 'preact'
 import { Link } from 'preact-router'
 import Form from '../components/form'
 import config from '../config'
-import 'linkstate/polyfill'
+import '../../lib/linkstate.js'
 import withStyles from '../components/jss'
 
 import { login, setAuthToken } from '../api/auth'
@@ -92,7 +92,7 @@ export default withStyles({
             placeholder='Team Token'
             type='text'
             value={teamToken}
-            onChange={this.linkState('teamToken')}
+            onChange={linkState(this, 'teamToken')}
           />
           {config.emailEnabled && (
             <Link href='/recover' class={classes.link}>Lost your team token?</Link>

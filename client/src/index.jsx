@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'preact/hooks'
 import Router, { route } from 'preact-router'
+import { render } from 'preact'
 
 import 'cirrus-ui'
 import withStyles from './components/jss'
@@ -89,7 +90,7 @@ function App ({ classes }) {
   )
 }
 
-export default withStyles({
+render(withStyles({
   '@global body': {
     overflowX: 'hidden'
   },
@@ -138,4 +139,4 @@ export default withStyles({
   contentWrapper: {
     flex: '1 0 auto'
   }
-}, App)
+}, App), document.getElementById('app'))

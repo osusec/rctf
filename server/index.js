@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-import config from './config/server'
+import config from './config/server.js'
 
 const runMigrations = async () => {
   const { default: migrate } = await import('./database/migrate')

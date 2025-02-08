@@ -1,5 +1,4 @@
 import config from '../config'
-import 'linkstate/polyfill'
 import Markdown from './markdown'
 import withStyles from './jss'
 

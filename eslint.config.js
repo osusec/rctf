@@ -1,4 +1,7 @@
 import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import hooks from 'eslint-plugin-react-hooks';
+import globals from 'globals';
 
 export default tseslint.config(
   tseslint.configs.recommended,
@@ -6,16 +9,42 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: [
+            "eslint.config.js",
+          ],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   {
-    files: ['**/*.js'],
+    files: ['server/**/*.js'],
     extends: [tseslint.configs.disableTypeChecked],
   },
   {
+    files: ['client/**/*.{js,jsx}'],
+    extends: [tseslint.configs.disableTypeChecked],
+    plugins: {
+      'react': react,
+      'react-hooks':hooks,
+    },
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+      globals: {
+        ...globals.browser,
+      },
+    },
+    ignores: [
+      "**/*.config.js",
+    ],
+  },
+  {
+    files: ['server/**/*.{js,ts}'],
     languageOptions: {
       ecmaVersion: 6,
       parserOptions: {
@@ -40,7 +69,7 @@ export default tseslint.config(
     },
     ignores: [
       "dist",
-      "/client/src/static/analytics/*"
+      "/client/src/static/analytics/*",
     ],
   }
 );
