@@ -4786,19 +4786,7 @@ glob-to-regexp@^0.4.1:
   resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==
 
-glob@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-11.0.0.tgz#6031df0d7b65eaa1ccb9b29b5ced16cea658e77e"
-  integrity sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==
-  dependencies:
-    foreground-child "^3.1.0"
-    jackspeak "^4.0.1"
-    minimatch "^10.0.0"
-    minipass "^7.1.2"
-    package-json-from-dist "^1.0.0"
-    path-scurry "^2.0.0"
-
-glob@11.0.1, glob@^11.0.0:
+glob@11.0.1, glob@^11.0.0, glob@~11.0.0:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/glob/-/glob-11.0.1.tgz#1c3aef9a59d680e611b53dcd24bb8639cef064d9"
   integrity sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==
@@ -7061,12 +7049,12 @@ node-int64@^0.4.0:
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
   integrity sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==
 
-node-pg-migrate@7.9.0:
-  version "7.9.0"
-  resolved "https://registry.yarnpkg.com/node-pg-migrate/-/node-pg-migrate-7.9.0.tgz#ffb12d0ddd146727919e0929655b775798c344b3"
-  integrity sha512-QW44kESVrXPWZ8NIvgrqSLSN6op0hygtsE/DSOyemWbz3Mr/ToSBAOLfuiKWAVPEzLizSemkKLmpsBFdYUrHRw==
+node-pg-migrate@7.9.1:
+  version "7.9.1"
+  resolved "https://registry.yarnpkg.com/node-pg-migrate/-/node-pg-migrate-7.9.1.tgz#b8b9b7dafa6321e9567171ea20649a3146656c69"
+  integrity sha512-6z4OSN27ye8aYdX9ZU7NN2PTI5pOp34hTr+22Ej12djIYECq++gT7LPLZVOQXEeVCBOZQLqf87kC3Y36G434OQ==
   dependencies:
-    glob "11.0.0"
+    glob "~11.0.0"
     yargs "~17.7.0"
 
 node-preload@^0.2.1:
